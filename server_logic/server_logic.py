@@ -28,4 +28,4 @@ class RequestHandler(BaseRequestHandler):
             cursor.execute(
                 f"insert into appointments values('{self.email}','{self.send_date}','{self.send_time}','{self.subject}','{self.message}');"
             )
-            print("Appointment scheduled.")
+            print("Appointment recorded.")

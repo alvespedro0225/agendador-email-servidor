@@ -3,15 +3,14 @@ from contextlib import contextmanager
 from pydantic import BaseModel
 from typing import Any, Optional
 
-
 class Appointment(BaseModel):
 
     reciever: str
     send_time: str
     subject: str
     message: str
-    hour: Optional[str] = None
     mins: Optional[str] = None
+    hour: Optional[str] = None
 
     def model_post_init(self, __context: Any) -> None:
         self.hour = self.send_time[:2]
